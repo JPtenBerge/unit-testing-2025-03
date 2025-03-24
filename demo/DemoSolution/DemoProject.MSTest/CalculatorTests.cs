@@ -14,18 +14,6 @@ public sealed class CalculatorTests
         _sut = new Calculator();
     }
 
-
-    // FunctieDieJeTestResultaat()
-    // WatBeginStaatVerwachteResultaat()
-    // AddPositiveNumbersShouldAddEverything()
-
-    // given-when-then
-    // arrange-act-assert
-    // AddWithPositiveNumbersShouldAddEverything()
-    // Add_PositiveNumbers_AddEverything()
-    // Add_With_Positive_Numbers_Should_Really_Do_Something_Special()
-
-
     [TestMethod]
     public void Add_PositiveNumbers_AddEverything()
     {

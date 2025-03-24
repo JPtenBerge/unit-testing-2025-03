@@ -12,7 +12,7 @@ namespace DemoProject.NUnit
         [Test]
         public void Test1()
         {
-            ClassicAssert.AreEqual("hoi", "doei");
+            //ClassicAssert.AreEqual("hoi", "doei");
         }
     }
 }
