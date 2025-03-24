@@ -55,3 +55,8 @@ Static zaken die men graag wil mocken:
 // Add_PositiveNumbers_AddEverything()
 // Add_With_Positive_Numbers_Should_Really_Do_Something_Special()
 ```
+
+## Verder
+
+- [Visual Studio edities](https://visualstudio.microsoft.com/vs/compare/): testondersteuning is buiten de Enterprise-editie vrij karig. Geen live unit testing, geen Microsoft Fakes (static zaken mocken), zelfs geen code coverage.
+- [Awesome Assertions](https://awesomeassertions.org/) voor leesbare/makkelijkere assertions, zeker bij objecten/collections vergelijken
