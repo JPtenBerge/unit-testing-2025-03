@@ -8,9 +8,17 @@ namespace DemoProject;
 
 public class Autocompleter<T>
 {
+    private readonly INavigateService _navigateService;
+
     public string Query { get; set; }
     public List<T> Data { get; set; }
     public List<T> Suggestions { get; set; }
+    public int? HighlightedIndex { get; set; }
+
+    public Autocompleter(INavigateService navigateService)
+    {
+        _navigateService = navigateService;
+    }
 
     public void Autocomplete()
     {
@@ -36,4 +44,16 @@ public class Autocompleter<T>
             }
         }
     }
+
+    public void Next()
+    {
+        if (Suggestions == null || !Suggestions.Any())
+        {
+            return;
+        }
+
+        // "high cohesion, low coupling"
+        HighlightedIndex = _navigateService.Next(Suggestions, HighlightedIndex);
+    }
+
 }

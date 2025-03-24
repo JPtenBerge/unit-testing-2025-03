@@ -11,6 +11,7 @@ namespace DemoProject.MSTest;
 public class AutocompleterTests
 {
     Autocompleter<Car> _sut = null!;
+    NepNavigateService _nepNavigateService = null!;
     List<Car> _data = null!;
 
     [TestInitialize]
@@ -29,7 +30,8 @@ public class AutocompleterTests
             new() { Make = "Fiat", Model = "Punto" },
             new() { Make = "Toyota", Model = "Yaris" },
         };
-        _sut = new Autocompleter<Car>();
+        _nepNavigateService = new();
+        _sut = new Autocompleter<Car>(_nepNavigateService);
         _sut.Data = _data;
     }
 
@@ -100,5 +102,22 @@ public class AutocompleterTests
 
         // Assert
         Assert.ThrowsException<InvalidOperationException>(() => _sut.Autocomplete());
+    }
+
+    [TestMethod]
+    public void Next_WithSuggestions_UsesNavigateService()
+    {
+        // Arrange
+        _sut.Query = "e";
+        _sut.Autocomplete(); // black box
+
+        //_sut.Suggestions = new List<Car>(); // white box
+        //_sut.HighlightedIndex = 3;
+
+        // Act
+        _sut.Next();
+
+        // Assert
+        Assert.IsTrue(_nepNavigateService.HasNextBeenCalled);
     }
 }

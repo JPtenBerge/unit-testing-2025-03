@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DemoProject.MSTest;
+
+class NepNavigateService : INavigateService
+{
+    public bool HasNextBeenCalled { get; set; }
+
+    public int Next<T>(List<T> data, int? currentIndex)
+    {
+        HasNextBeenCalled = true;
+        return 42;
+    }
+}
