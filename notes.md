@@ -60,3 +60,4 @@ Static zaken die men graag wil mocken:
 
 - [Visual Studio edities](https://visualstudio.microsoft.com/vs/compare/): testondersteuning is buiten de Enterprise-editie vrij karig. Geen live unit testing, geen Microsoft Fakes (static zaken mocken), zelfs geen code coverage.
 - [Awesome Assertions](https://awesomeassertions.org/) voor leesbare/makkelijkere assertions, zeker bij objecten/collections vergelijken
+- [Bowling Kata](https://codingdojo.org/kata/Bowling/) voor TDD
