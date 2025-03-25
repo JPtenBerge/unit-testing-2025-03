@@ -78,6 +78,7 @@ public class AutocompleterTests
 
         // Assert
         Assert.AreEqual(5, _sut.Suggestions.Count);
+        
     }
 
     [TestMethod]

@@ -56,6 +56,28 @@ Static zaken die men graag wil mocken:
 // Add_With_Positive_Numbers_Should_Really_Do_Something_Special()
 ```
 
+## Mutation testing
+
+- waarden veranderen
+- statements
+- CODE VERANDEREN
+- "test your tests"
+- 100% mutation score? pacemaker.
+
+```cs
+// productiecode
+if (x > 4) { ... }
+
+// mutanten
+if (x > 4000) { ... }
+if (x < 4) { ... }
+if (x >= 4) { ... }
+if (x == -4) { ... }
+```
+
+STRYKER
+- naam komt origineel van X-Men, dude die alle mutanten af wil maken
+
 ## Verder
 
 - [Visual Studio edities](https://visualstudio.microsoft.com/vs/compare/): testondersteuning is buiten de Enterprise-editie vrij karig. Geen live unit testing, geen Microsoft Fakes (static zaken mocken), zelfs geen code coverage.
