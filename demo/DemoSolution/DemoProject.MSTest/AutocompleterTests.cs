@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace DemoProject.MSTest;
 
@@ -11,7 +12,8 @@ namespace DemoProject.MSTest;
 public class AutocompleterTests
 {
     Autocompleter<Car> _sut = null!;
-    NepNavigateService _nepNavigateService = null!;
+    //NepNavigateService _nepNavigateService = null!;
+    Mock<INavigateService> _navigateServiceMock = null!;
     List<Car> _data = null!;
 
     [TestInitialize]
@@ -30,8 +32,11 @@ public class AutocompleterTests
             new() { Make = "Fiat", Model = "Punto" },
             new() { Make = "Toyota", Model = "Yaris" },
         };
-        _nepNavigateService = new();
-        _sut = new Autocompleter<Car>(_nepNavigateService);
+        //_nepNavigateService = new();
+        _navigateServiceMock = new();
+        _navigateServiceMock.Setup(x => x.Next(It.IsAny<List<Car>>(), It.IsAny<int?>())).Returns(48);
+
+        _sut = new Autocompleter<Car>(_navigateServiceMock.Object);
         _sut.Data = _data;
     }
 
@@ -110,6 +115,7 @@ public class AutocompleterTests
         // Arrange
         _sut.Query = "e";
         _sut.Autocomplete(); // black box
+        _navigateServiceMock.Setup(x => x.Next(It.IsAny<List<Car>>(), It.IsAny<int?>())).Returns(48);
 
         //_sut.Suggestions = new List<Car>(); // white box
         //_sut.HighlightedIndex = 3;
@@ -118,6 +124,7 @@ public class AutocompleterTests
         _sut.Next();
 
         // Assert
-        Assert.IsTrue(_nepNavigateService.HasNextBeenCalled);
+        _navigateServiceMock.Verify(x => x.Next(It.IsAny<List<Car>>(), It.IsAny<int?>()), Times.Once);
+        Assert.AreEqual(48, _sut.HighlightedIndex);
     }
 }
