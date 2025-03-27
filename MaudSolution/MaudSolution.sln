@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "maudproject.client", "MaudProject\maudproject.client\maudproject.client.esproj", "{429DF834-3BC2-4045-B8B8-FAD18C145DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaudProject.Server", "MaudProject\MaudProject.Server\MaudProject.Server.csproj", "{7A7819BA-F649-499E-AE01-A52972C660EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429DF834-3BC2-4045-B8B8-FAD18C145DB3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7A7819BA-F649-499E-AE01-A52972C660EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7819BA-F649-499E-AE01-A52972C660EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7819BA-F649-499E-AE01-A52972C660EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7819BA-F649-499E-AE01-A52972C660EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD4B3C26-6CCE-40C3-AE8C-75DE8316E41B}
+	EndGlobalSection
+EndGlobal
